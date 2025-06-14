@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Caveat&family=Dancing+Script&family=Gloria+Hallelujah&family=Great+Vibes&family=Handlee&family=Indie+Flower&family=Pacifico&family=Satisfy&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+
+  
+  <title>365 dias maravilhosos</title>
+</head>
+
+
+
+
+
+<body>
+  <section id="meu-amor"></section> 
+
+ <div id="calendar-container">
+    <div id="calendar-header">
+      <span class="month-name">Junho 2024</span>
+    </div>
+    <div id="calendar-days">
+      <div class="day-name">Dom</div>
+      <div class="day-name">Seg</div>
+      <div class="day-name">Ter</div>
+      <div class="day-name">Qua</div>
+      <div class="day-name">Qui</div>
+      <div class="day-name">Sex</div>
+      <div class="day-name">Sab</div>
+    </div>
+    <div id="calendar-dates"></div>
+  </div>
+<!-- Título Principal -->
+  <h1 id="titulo-principal">O melhor ano da minha vida  <br> foi ao seu lado.</h1>
+
+  <!-- Imagem do bolo -->
+  <div id="imagem-coracao">
+    
+    <img id="coracao_grande" src="icones/coracao_1.png" alt="Bolo de Aniversário"> <!--   Aqui você vai precisar usar outra imagem caso a idade não seja compativel -->
+  </div>
+
+  <!-- Container dos confetes -->
+  <div id="confetes-container"></div>
+</section>
+
+  <!-- Mensagem de parabéns -->
+  <div class="container" >
+    <div id="parabens">
+      <p id="txt_inicial">1 ano de nós dois!</strong><br>
+        Já faz um ano que tenho a sorte de chamar você de meu amor, e isso me faz sorrir todos os dias. Estarei contigo em cada passo, sempre presente e apaixonado. Te amo mais do que ontem, menos do que amanhã. E esse amor é eterno, jamais irá diminuir ou se apagar e isso te garanto gatinha. 😘
+
+      </p>
+    </div>
+  </div>
+
+  <main  id="principal">
+    <!-- Área estilo rede social -->
+    <section id="insta">
+      <div id="perfil-container">
+
+        <!-- Aqui vai a foto de perfio da sua namorada(o) aconselho usar uma foto de tamanho quadrado pois se usar um tamanho diferente vai ficar destorcido-->
+        <img id="perfil" src="imagem_perfil/Perfil_luiza.jpg" alt="perfil">
+
+        <!-- bote o nome da sua namorada aqui-->
+        <p >_anna_kelly_ <img id="verificado" src="icones/verificado.png" alt="Verificado"> <br> <i style="font-size: small;">Uruaçu</i></p>
+    
+      </div>
+      <!-- Carrossel de fotos -->
+      <div class="carrossel">
+        <!-- escolha 5 fotos diferente que de preferencia seja so dela onde vai ser simulado um perfil de do feed do intagram-->
+        <img class="slides" src="imagem_perfil/anna5.jpg" alt="Foto 1">
+        <img class="slides" src="imagem_perfil/anna1.jpg" alt="Foto 5">
+        <img class="slides" src="imagem_perfil/anna2.jpg" alt="Foto 2">
+        <img class="slides" src="imagem_perfil/anna3.jpg" alt="Foto 7">
+        <img class="slides" src="imagem_perfil/anna4.jpg" alt="Foto 3">
+        
+      </div>
+      <!-- Pontos do carrossel -->
+      <div class="dots">
+        <span class="dot active" onclick="moveToSlide(0)"></span>
+        <span class="dot" onclick="moveToSlide(1)"></span>
+        <span class="dot" onclick="moveToSlide(2)"></span>
+        <span class="dot" onclick="moveToSlide(3)"></span>
+        <span class="dot" onclick="moveToSlide(4)"></span>
+        
+      </div>
+      <!-- Curtidas -->
+      <div id="curtida">
+        <img id="likeIcon" src="icones/coracao.png" alt="Curtir">
+
+        <p id="quant_like">1</p> 
+      </div>
+
+
+      <!-- Comentários -->
+
+<div id="comentario">
+  <p id="nome-perfil">
+    <img id="perfil-lucas" src="imagem_perfil/Perfil_luiza.jpg" alt="">
+    <i >vinigbs </i><!-- Bote seu nome de perfil-->
+  </p>
+  <p id="meu-comentario">De longe a mulher mais linda do mundo.😘 </p>
+  <button class="curtir-btn">curtir <span class="contador">1347</span></button>
+</div>
+
+<div id="comentario">
+  <p id="nome-perfil">
+    <img id="perfil-lucas" src="imagem_perfil/Perfil_luiza.jpg" alt="">
+    <i >vinigbs</i> <!-- Bote seu nome de perfil-->
+  </p>
+  <p id="meu-comentario">
+    Linda é pouco, você é maravilhosa é perfeita !&#129392;
+  </p>
+  <button class="curtir-btn">
+    curtir 
+    <span class="contador">789</span> <
+  </button>
+</div>
+
+<div id="comentario">
+  <p id="nome-perfil">
+    <img id="perfil-lucas" src="imagem_perfil/Perfil_luiza.jpg" alt="">
+    <i>vinigbs</i> 
+  </p>
+  <p id="meu-comentario">
+    Mesmo existindo mais de 370 mil palavras no portugues, nenhuma delas é suficiente para descrever tamanha beleza. &#10084;&#65039;
+  </p>
+  <button class="curtir-btn">
+    curtir
+    <span class="contador">1105</span>
+  </button>
+</div>
+
+<div id="comentario">
+  <p id="nome-perfil">
+    <img id="perfil-lucas" src="imagem_perfil/Perfil_luiza.jpg" alt="">
+    <i >vinigbs</i> 
+  </p>
+  <p id="meu-comentario">
+    A mulher mais incrível que já conheci, sorte a minha te ter. &#128525;
+  </p>
+  <button class="curtir-btn">
+    curtir
+    <span class="contador">426</span>
+  </button>
+</div>
+
+
+<div id="comentario">
+  <p id="nome-perfil">
+    <img id="perfil-lucas" src="imagem_perfil/Perfil_luiza.jpg" alt="">
+    <i >vinigbs</i> <!-- Bote seu nome de perfil-->
+  </p>
+  <p id="meu-comentario">
+    Cada dia mais apaixonado por você, meu amor! &#128293
+  <button class="curtir-btn">
+    curtir
+    <span class="contador">1398</span>
+  </button>
+</div>
+<div>
+  <br>
+  <br>
+</div>
+<hr>
+
+<div id="perfil-container">
+
+  
+  <img id="perfil" src="imagem_perfil/Perfil_luiza.jpg" alt="perfil">
+
+  <!-- bote o nome da sua namorada aqui-->
+  <p >vinigbs <img id="verificado" src="icones/verificado.png" alt="Verificado"> <br> <i style="font-size: small;">Uruaçu</i></p>
+
+</div>
+ 
+  <div id="txt_carrossel">
+    
+        <br>
+          <p id="p-carrosel-juntos">Se eu pudesse congelar o tempo, seria em todos os momentos em que a gente já esteve juntos ou que ainda vamos estar, porque cada segundo com você é único e muito especial. <br><br> Não existe um futuro possível sem você nele, vai ser a gente juntos ate ficarmos velhinhos gaga, sempre estara bem guardadinha no meu coraçãozinho.</p>
+  </div>
+  
+  <div class="insta-footer">
+    <div class="insta-actions-left">
+      <div class="insta-icon">
+        <img id="likeIcon" src="icones/coracao.png" alt="Curtir" />
+      </div>
+      <div class="insta-icon">
+        <img id="commentIcon" src="icones/comment.png" alt="Comentar" />
+      </div>
+      <div class="insta-icon">
+        
+      </div>
+    </div>
+    <div class="insta-actions-right">
+      <div class="insta-icon">
+        <svg viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg">
+          <path d="M336 0H48C21.5 0 0 21.5 0 48v464l192-112 192 112V48c0-26.5-21.5-48-48-48z" />
+        </svg>
+      </div>
+    </div>
+  </div>
+      
+      </div>
+    
+    
+
+    <!-- Aqui pode parecer um pouco complexo
+      mas é mais simples do que você imagina, 
+      va ate o spotify web e escolha uma musica e procure o 
+      botão compartilhar la foce vacê vai pode copiar o codigo iframe pronot 
+     dapra escolher tamnho cor, se mesmo assim parecer complicado da procura um tutorial no em 
+     qualquer plataforma que em 2 minutos você aprende -->
+
+    </section>
+    <section id="spotify">
+
+      <h3 class="h3" id="frase-spotify">Algumas das músicas me fazem pensar só em você.</h3>
+      <h3 class="h3"><i><img id="ico-spotify" src="icones/spotify.png" alt=""></i> </h3>
+
+      <!-- importe seus iframes -->
+      <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/7fs6csqE3EltCrESv6cn0J?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+      <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4HQ4VFKOJRnTGZlYOOgrr6?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+      <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/24yhU1uQVX0u5Rvc0gProL?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+      <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/68cPbG7hJnwDW9nPX1uQcX?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+      <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/7huqdLsHUW2HfDvjGR4SvR?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+      <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0ja80k9GL9aR5IZ79tQHVX?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+      <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/2WCl1euC7A6bJM6ZbTsEff?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+      <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/6KZfPDb9HRfogswTmecUBM?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </section>
+    
+  <!-- Animação do coração e estrela -->
+<div class="espaco">
+  <!-- Estrela central -->
+  <div class="estrela"></div>
+  
+  <!-- Órbita que move o coração em torno da estrela -->
+  <div class="orbita-coracao">
+    
+    <!-- Wrapper do coração que desfaz a rotação do pai -->
+    <div class="coracao-wrapper">
+      <!-- Coração substituído pela imagem -->
+      <img 
+        src="https://static.vecteezy.com/system/resources/previews/018/868/329/non_2x/red-heart-symbol-on-transparent-background-free-png.png" 
+        class="coracao" 
+        alt="Heart">
+      
+      <!-- Órbita da Lua ao redor do coração -->
+      <div class="orbita-lua">
+        <!-- Lua -->
+        <div class="lua"></div>
+      </div>
+    </div>
+  
+  </div>
+</div>
+
+
+    <<section id="temporizador">
+      <h1>A contagem começa a partir <br> do momento em que fiz <br>a melhor escolha <br>da minha vida. <br> <strong style="color:black; font-size: larger;">12/06/2024</strong></h1>
+    
+      <div class="contador">
+        <div class="tempo" id="anos">0<span>Anos</span></div>
+        <div class="tempo" id="dias">0<span>Dias</span></div>
+        <div class="tempo" id="horas">0<span>Horas</span></div>
+        <div class="tempo" id="minutos">0<span>Minutos</span></div>
+        <div class="tempo" id="segundos">0<span>Segundos</span></div>
+      </div>
+    </section>
+    
+    
+
+  </main>
+  <!-- chama o script.js -->
+  <script src="script/script.js"></script>
+
+</body>
+</html>
