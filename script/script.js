@@ -166,52 +166,59 @@ botoesCurtir.forEach(botao => {
 
 
 const carrosselLuiza = document.getElementById("carrosselLuiza");
-const totalImagensLuiza = 7;
 
-// Calculate image width based on screen size
-function getLarguraImagemVW() {
-  const largura = window.innerWidth;
-  if (largura <= 480) {
-    return 45; // Mobile: 45vw
-  } else if (largura <= 768) {
-    return 35; // Tablet: 35vw
-  } else {
-    return 30; // Desktop: 30vw (default from CSS)
+// Only setup carousel if element exists
+if (carrosselLuiza) {
+  const totalImagensLuiza = 7;
+
+  // Calculate image width based on screen size
+  function getLarguraImagemVW() {
+    const largura = window.innerWidth;
+    if (largura <= 480) {
+      return 45; // Mobile: 45vw
+    } else if (largura <= 768) {
+      return 35; // Tablet: 35vw
+    } else {
+      return 30; // Desktop: 30vw (default from CSS)
+    }
   }
-}
 
-let posicaoLuiza = 0;
+  let posicaoLuiza = 0;
 
-function avancarLuiza() {
-  posicaoLuiza += 3;
-  if (posicaoLuiza >= totalImagensLuiza) {
-    posicaoLuiza = 0;
-  }
-  atualizarCarrosselLuiza();
-}
-
-function voltarLuiza() {
-  posicaoLuiza -= 3;
-  if (posicaoLuiza < 0) {
-    posicaoLuiza = totalImagensLuiza - (totalImagensLuiza % 3 || 3);
-  }
-  atualizarCarrosselLuiza();
-}
-
-function atualizarCarrosselLuiza() {
-  // Utiliza 'vw' para que o carrossel seja responsivo à largura da viewport
-  const larguraImagemLuizaVW = getLarguraImagemVW();
-  carrosselLuiza.style.transform = `translateX(-${posicaoLuiza * larguraImagemLuizaVW}vw)`;
-}
-
-// Update carousel on window resize
-let resizeTimeout;
-window.addEventListener('resize', () => {
-  clearTimeout(resizeTimeout);
-  resizeTimeout = setTimeout(() => {
+  function avancarLuiza() {
+    posicaoLuiza += 3;
+    if (posicaoLuiza >= totalImagensLuiza) {
+      posicaoLuiza = 0;
+    }
     atualizarCarrosselLuiza();
-  }, 100);
-});
+  }
+
+  function voltarLuiza() {
+    posicaoLuiza -= 3;
+    if (posicaoLuiza < 0) {
+      posicaoLuiza = totalImagensLuiza - (totalImagensLuiza % 3 || 3);
+    }
+    atualizarCarrosselLuiza();
+  }
+
+  function atualizarCarrosselLuiza() {
+    // Utiliza 'vw' para que o carrossel seja responsivo à largura da viewport
+    const larguraImagemLuizaVW = getLarguraImagemVW();
+    carrosselLuiza.style.transform = `translateX(-${posicaoLuiza * larguraImagemLuizaVW}vw)`;
+  }
+
+  // Update carousel on window resize
+  let resizeTimeout;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+      atualizarCarrosselLuiza();
+    }, 100);
+  });
+
+  // Loop automático
+  setInterval(avancarLuiza, 3000);
+}
 
 const audios = document.querySelectorAll('.audio');
 
@@ -228,10 +235,6 @@ const observer = new IntersectionObserver((entries) => {
 audios.forEach(audio => {
   observer.observe(audio);
 });
-
-
-// Loop automático
-setInterval(avancarLuiza, 3000);
 
 function atualizarContagem() {
   const agora = new Date();
