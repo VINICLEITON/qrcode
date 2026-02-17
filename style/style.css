@@ -14,7 +14,8 @@ body {
   
 }
 #calendar-container {
-  width: 300px;
+  width: 90%;
+  max-width: 300px;
   margin: 50px auto;
   font-family: sans-serif;
   color: #444;
@@ -41,9 +42,10 @@ body {
 }
 
 .date {
-  width: 40px;
-  height: 40px;
-  line-height: 40px;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
   border-radius: 50%;
   cursor: default;
@@ -121,7 +123,8 @@ body {
 
 
 #coracao_grande {
-  width: 250px;
+  width: 100%;
+  max-width: 250px;
 }
 
 
@@ -191,20 +194,21 @@ body {
 
 /* Imagem do perfil */
 #perfil {
-  width: 50px;
-  border-radius: 200px;
+  width: 3.125rem;
+  border-radius: 50%;
 }
 
 /* Ícone de verificado */
 #verificado {
-  width: 18px;
-  margin-left: 3px;
+  width: 1.125rem;
+  margin-left: 0.1875rem;
 }
 
 /* Container do carrossel de fotos */
 .carrossel {
   position: relative;
   max-width: 600px;
+  width: 100%;
   margin: 30px auto 10px auto;
   margin-top: 15px;
   margin-bottom: 3px;
@@ -214,8 +218,9 @@ body {
 
 /* Imagens dentro do carrossel */
 .slides {
-  width: 470px;
-  height: 500px;
+  width: 100%;
+  height: auto;
+  max-height: 500px;
   object-fit: cover;
   display: block;
   margin: 0 auto;
@@ -253,8 +258,8 @@ body {
 
 /* Ícone de curtida */
 #likeIcon {
-  width: 30px;
-  margin-left: 18px;
+  width: 1.875rem;
+  margin-left: 1.125rem;
 }
 
 /* Estilo dos comentários */
@@ -279,8 +284,8 @@ body {
 
 /* Imagem do perfil nos comentários */
 #perfil-lucas {
-  width: 35px;
-  height: 35px;
+  width: 2.1875rem;
+  height: 2.1875rem;
   border-radius: 50%;
   object-fit: cover;
 }
@@ -343,16 +348,17 @@ body {
     box-shadow: -1px 0px 20px #00000066;
 
 }
-.carrosselLuiza img {
+.carrosselAnna img {
   width: 30vw;
-  height: calc(30vw * 5 / 4);
-  /* Calcula a altura mantendo a proporção 4:5 */
+  min-width: 150px;
+  height: auto;
+  aspect-ratio: 4 / 5;
   object-fit: cover;
 }
 
 
 /* Container do segundo carrossel */
-.carrosselLuiza-container {
+.carrosselAnna-container {
   position: relative;
   display: flex;
   overflow: hidden;
@@ -364,21 +370,14 @@ body {
 }
 
 /* Estilo do segundo carrossel */
-.carrosselLuiza {
+.carrosselAnna {
   display: flex;
   width: auto;
   transition: transform 2s ease-in-out;
 }
 
-/* Imagens do segundo carrossel */
-.carrosselLuiza img {
-  width: 60vw;
-  height: 50vh;
-  object-fit: cover;
-}
-
 /* Controles do segundo carrossel */
-.controlesLuiza {
+.controlesAnna {
   display: flex;
   justify-content: center;
   gap: 10px;
@@ -386,7 +385,7 @@ body {
 }
 
 /* Botões do segundo carrossel */
-.btnLuiza {
+.btnAnna {
   background: #555555;
   border: none;
   padding: 10px 20px;
@@ -396,12 +395,12 @@ body {
 }
 
 /* Efeito hover nos botões */
-.btnLuiza:hover {
+.btnAnna:hover {
   background: #777;
 }
 
 /* Estado ativo do carrossel (quando arrastando) */
-.carrosselLuiza.active {
+.carrosselAnna.active {
   cursor: grabbing;
   cursor: -webkit-grabbing;
   user-select: none;
@@ -485,8 +484,10 @@ body {
 
 /* Ícone do Spotify */
 #ico-spotify {
-  width: 13vh;
-  height: 13vh;
+  width: 8rem;
+  height: 8rem;
+  max-width: 13vh;
+  max-height: 13vh;
   margin: 2rem auto;
   display: block;
 }
@@ -522,8 +523,8 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 100px;
-  height: 100px;
+  width: 6.25rem;
+  height: 6.25rem;
   background: radial-gradient(circle, #FFD700, #fff700);
   clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
   transform: translate(-50%, -50%);
@@ -535,8 +536,8 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 300px;
-  height: 300px;
+  width: min(300px, 60vw);
+  height: min(300px, 60vw);
   border: 1px dashed #ff007f6c;
   border-radius: 50%;
   transform: translate(-50%, -50%);
@@ -575,8 +576,7 @@ body {
 /* Estilo do coração usando a imagem externa */
 .coracao {
   position: relative;
-  width: 40px;
-  /* ajuste o tamanho conforme desejado */
+  width: 2.5rem;
   height: auto;
   z-index: 1;
 }
@@ -586,8 +586,8 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 60px;
-  height: 60px;
+  width: 3.75rem;
+  height: 3.75rem;
   border-radius: 50%;
   transform: translate(-50%, -50%);
   animation: rotate-lua 2s linear infinite;
@@ -609,8 +609,8 @@ body {
   position: absolute;
   top: 50%;
   left: 0;
-  width: 8px;
-  height: 8px;
+  width: 0.5rem;
+  height: 0.5rem;
   background: #0f0f0f;
   border-radius: 50%;
   transform: translate(-50%, -50%);
@@ -674,4 +674,130 @@ h1 {
   font-size: rem;
   color: white;
   font-size: 12px;
+}
+
+/* Media Queries for Responsive Design */
+
+/* Small mobile devices (up to 480px) */
+@media (max-width: 480px) {
+  #titulo-principal {
+    font-size: 1.5em;
+    margin: 20px 10px;
+  }
+
+  #parabens {
+    width: 95vw;
+    padding: 1rem;
+  }
+
+  #insta {
+    width: 98vw;
+  }
+
+  .carrossel {
+    width: 95%;
+  }
+
+  .slides {
+    max-height: 400px;
+  }
+
+  #txt_carrossel {
+    width: 90vw;
+    padding: 1rem;
+    font-size: 1em;
+  }
+
+  .carrosselAnna img {
+    width: 45vw;
+    min-width: 120px;
+  }
+
+  #temporizador .tempo {
+    min-width: 7vh;
+    min-height: 6vh;
+    font-size: 14px;
+  }
+
+  #temporizador .tempo span {
+    font-size: 10px;
+  }
+
+  .espaco {
+    height: 300px;
+  }
+
+  .estrela {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .orbita-coracao {
+    width: min(200px, 70vw);
+    height: min(200px, 70vw);
+  }
+
+  .coracao {
+    width: 1.5rem;
+  }
+}
+
+/* Tablets (481px to 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  #titulo-principal {
+    font-size: 1.8em;
+    margin: 25px 15px;
+  }
+
+  #parabens {
+    width: 92vw;
+  }
+
+  #insta {
+    width: 96vw;
+  }
+
+  .carrossel {
+    width: 90%;
+  }
+
+  .carrosselAnna img {
+    width: 35vw;
+    min-width: 140px;
+  }
+
+  #temporizador .tempo {
+    min-width: 8vh;
+    min-height: 7vh;
+    font-size: 16px;
+  }
+
+  .espaco {
+    height: 350px;
+  }
+
+  .estrela {
+    width: 5rem;
+    height: 5rem;
+  }
+
+  .orbita-coracao {
+    width: min(250px, 65vw);
+    height: min(250px, 65vw);
+  }
+
+  .coracao {
+    width: 2rem;
+  }
+}
+
+/* Desktop (769px and above) */
+@media (min-width: 769px) {
+  .carrosselAnna img {
+    width: 25vw;
+  }
+
+  #parabens, #insta, #txt_carrossel {
+    max-width: 600px;
+  }
 }

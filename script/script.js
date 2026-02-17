@@ -165,30 +165,64 @@ botoesCurtir.forEach(botao => {
 
 
 
-const carrosselLuiza = document.getElementById("carrosselLuiza");
-const totalImagensLuiza = 7;
-const larguraImagemLuizaVW = 50; // Define que cada imagem terá 50vw de largura
-let posicaoLuiza = 0;
+const carrosselAnna = document.getElementById("carrosselAnna");
 
-function avancarLuiza() {
-  posicaoLuiza += 3;
-  if (posicaoLuiza >= totalImagensLuiza) {
-    posicaoLuiza = 0;
+// Responsive breakpoints (must match CSS media queries)
+const BREAKPOINT_MOBILE = 480;
+const BREAKPOINT_TABLET = 768;
+const RESIZE_DEBOUNCE_DELAY = 100;
+
+// Only setup carousel if element exists
+if (carrosselAnna) {
+  const totalImagensAnna = 7;
+
+  // Calculate image width based on screen size
+  function getLarguraImagemVW() {
+    const largura = window.innerWidth;
+    if (largura <= BREAKPOINT_MOBILE) {
+      return 45; // Mobile: 45vw
+    } else if (largura <= BREAKPOINT_TABLET) {
+      return 35; // Tablet: 35vw
+    } else {
+      return 30; // Desktop: 30vw (default from CSS)
+    }
   }
-  atualizarCarrosselLuiza();
-}
 
-function voltarLuiza() {
-  posicaoLuiza -= 3;
-  if (posicaoLuiza < 0) {
-    posicaoLuiza = totalImagensLuiza - (totalImagensLuiza % 3 || 3);
+  let posicaoAnna = 0;
+
+  function avancarAnna() {
+    posicaoAnna += 3;
+    if (posicaoAnna >= totalImagensAnna) {
+      posicaoAnna = 0;
+    }
+    atualizarCarrosselAnna();
   }
-  atualizarCarrosselLuiza();
-}
 
-function atualizarCarrosselLuiza() {
-  // Utiliza 'vw' para que o carrossel seja responsivo à largura da viewport
-  carrosselLuiza.style.transform = `translateX(-${posicaoLuiza * larguraImagemLuizaVW}vw)`;
+  function voltarAnna() {
+    posicaoAnna -= 3;
+    if (posicaoAnna < 0) {
+      posicaoAnna = totalImagensAnna - (totalImagensAnna % 3 || 3);
+    }
+    atualizarCarrosselAnna();
+  }
+
+  function atualizarCarrosselAnna() {
+    // Utiliza 'vw' para que o carrossel seja responsivo à largura da viewport
+    const larguraImagemAnnaVW = getLarguraImagemVW();
+    carrosselAnna.style.transform = `translateX(-${posicaoAnna * larguraImagemAnnaVW}vw)`;
+  }
+
+  // Update carousel on window resize
+  let resizeTimeout;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+      atualizarCarrosselAnna();
+    }, RESIZE_DEBOUNCE_DELAY);
+  });
+
+  // Loop automático
+  setInterval(avancarAnna, 3000);
 }
 
 const audios = document.querySelectorAll('.audio');
@@ -206,10 +240,6 @@ const observer = new IntersectionObserver((entries) => {
 audios.forEach(audio => {
   observer.observe(audio);
 });
-
-
-// Loop automático
-setInterval(avancarLuiza, 3000);
 
 function atualizarContagem() {
   const agora = new Date();
