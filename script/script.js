@@ -167,6 +167,11 @@ botoesCurtir.forEach(botao => {
 
 const carrosselLuiza = document.getElementById("carrosselLuiza");
 
+// Responsive breakpoints (must match CSS media queries)
+const BREAKPOINT_MOBILE = 480;
+const BREAKPOINT_TABLET = 768;
+const RESIZE_DEBOUNCE_DELAY = 100;
+
 // Only setup carousel if element exists
 if (carrosselLuiza) {
   const totalImagensLuiza = 7;
@@ -174,9 +179,9 @@ if (carrosselLuiza) {
   // Calculate image width based on screen size
   function getLarguraImagemVW() {
     const largura = window.innerWidth;
-    if (largura <= 480) {
+    if (largura <= BREAKPOINT_MOBILE) {
       return 45; // Mobile: 45vw
-    } else if (largura <= 768) {
+    } else if (largura <= BREAKPOINT_TABLET) {
       return 35; // Tablet: 35vw
     } else {
       return 30; // Desktop: 30vw (default from CSS)
@@ -213,7 +218,7 @@ if (carrosselLuiza) {
     clearTimeout(resizeTimeout);
     resizeTimeout = setTimeout(() => {
       atualizarCarrosselLuiza();
-    }, 100);
+    }, RESIZE_DEBOUNCE_DELAY);
   });
 
   // Loop automático

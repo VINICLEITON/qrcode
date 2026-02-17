@@ -43,7 +43,9 @@ body {
 
 .date {
   aspect-ratio: 1;
-  line-height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
   border-radius: 50%;
   cursor: default;
@@ -372,15 +374,6 @@ body {
   display: flex;
   width: auto;
   transition: transform 2s ease-in-out;
-}
-
-/* Imagens do segundo carrossel */
-.carrosselLuiza img {
-  width: 30vw;
-  min-width: 150px;
-  height: auto;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
 }
 
 /* Controles do segundo carrossel */
