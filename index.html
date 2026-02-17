@@ -17,7 +17,7 @@
       }
 
       img {
-        width: 60px;
+        width: clamp(40px, 8vw, 60px);
         position: absolute;
         bottom: -60px;
       }
@@ -46,7 +46,8 @@
         }
       }
       #coracao_inicial {
-        width: 50vh;
+        width: clamp(200px, 50vw, 50vh);
+        max-width: 400px;
         position: absolute;
         top: 60%;
         left: 50%;

@@ -167,7 +167,19 @@ botoesCurtir.forEach(botao => {
 
 const carrosselLuiza = document.getElementById("carrosselLuiza");
 const totalImagensLuiza = 7;
-const larguraImagemLuizaVW = 50; // Define que cada imagem terá 50vw de largura
+
+// Calculate image width based on screen size
+function getLarguraImagemVW() {
+  const largura = window.innerWidth;
+  if (largura <= 480) {
+    return 45; // Mobile: 45vw
+  } else if (largura <= 768) {
+    return 35; // Tablet: 35vw
+  } else {
+    return 30; // Desktop: 30vw (default from CSS)
+  }
+}
+
 let posicaoLuiza = 0;
 
 function avancarLuiza() {
@@ -188,8 +200,18 @@ function voltarLuiza() {
 
 function atualizarCarrosselLuiza() {
   // Utiliza 'vw' para que o carrossel seja responsivo à largura da viewport
+  const larguraImagemLuizaVW = getLarguraImagemVW();
   carrosselLuiza.style.transform = `translateX(-${posicaoLuiza * larguraImagemLuizaVW}vw)`;
 }
+
+// Update carousel on window resize
+let resizeTimeout;
+window.addEventListener('resize', () => {
+  clearTimeout(resizeTimeout);
+  resizeTimeout = setTimeout(() => {
+    atualizarCarrosselLuiza();
+  }, 100);
+});
 
 const audios = document.querySelectorAll('.audio');
 
