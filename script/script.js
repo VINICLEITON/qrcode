@@ -165,7 +165,7 @@ botoesCurtir.forEach(botao => {
 
 
 
-const carrosselLuiza = document.getElementById("carrosselLuiza");
+const carrosselAnna = document.getElementById("carrosselAnna");
 
 // Responsive breakpoints (must match CSS media queries)
 const BREAKPOINT_MOBILE = 480;
@@ -173,8 +173,8 @@ const BREAKPOINT_TABLET = 768;
 const RESIZE_DEBOUNCE_DELAY = 100;
 
 // Only setup carousel if element exists
-if (carrosselLuiza) {
-  const totalImagensLuiza = 7;
+if (carrosselAnna) {
+  const totalImagensAnna = 7;
 
   // Calculate image width based on screen size
   function getLarguraImagemVW() {
@@ -188,28 +188,28 @@ if (carrosselLuiza) {
     }
   }
 
-  let posicaoLuiza = 0;
+  let posicaoAnna = 0;
 
-  function avancarLuiza() {
-    posicaoLuiza += 3;
-    if (posicaoLuiza >= totalImagensLuiza) {
-      posicaoLuiza = 0;
+  function avancarAnna() {
+    posicaoAnna += 3;
+    if (posicaoAnna >= totalImagensAnna) {
+      posicaoAnna = 0;
     }
-    atualizarCarrosselLuiza();
+    atualizarCarrosselAnna();
   }
 
-  function voltarLuiza() {
-    posicaoLuiza -= 3;
-    if (posicaoLuiza < 0) {
-      posicaoLuiza = totalImagensLuiza - (totalImagensLuiza % 3 || 3);
+  function voltarAnna() {
+    posicaoAnna -= 3;
+    if (posicaoAnna < 0) {
+      posicaoAnna = totalImagensAnna - (totalImagensAnna % 3 || 3);
     }
-    atualizarCarrosselLuiza();
+    atualizarCarrosselAnna();
   }
 
-  function atualizarCarrosselLuiza() {
+  function atualizarCarrosselAnna() {
     // Utiliza 'vw' para que o carrossel seja responsivo à largura da viewport
-    const larguraImagemLuizaVW = getLarguraImagemVW();
-    carrosselLuiza.style.transform = `translateX(-${posicaoLuiza * larguraImagemLuizaVW}vw)`;
+    const larguraImagemAnnaVW = getLarguraImagemVW();
+    carrosselAnna.style.transform = `translateX(-${posicaoAnna * larguraImagemAnnaVW}vw)`;
   }
 
   // Update carousel on window resize
@@ -217,12 +217,12 @@ if (carrosselLuiza) {
   window.addEventListener('resize', () => {
     clearTimeout(resizeTimeout);
     resizeTimeout = setTimeout(() => {
-      atualizarCarrosselLuiza();
+      atualizarCarrosselAnna();
     }, RESIZE_DEBOUNCE_DELAY);
   });
 
   // Loop automático
-  setInterval(avancarLuiza, 3000);
+  setInterval(avancarAnna, 3000);
 }
 
 const audios = document.querySelectorAll('.audio');

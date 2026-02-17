@@ -348,7 +348,7 @@ body {
     box-shadow: -1px 0px 20px #00000066;
 
 }
-.carrosselLuiza img {
+.carrosselAnna img {
   width: 30vw;
   min-width: 150px;
   height: auto;
@@ -358,7 +358,7 @@ body {
 
 
 /* Container do segundo carrossel */
-.carrosselLuiza-container {
+.carrosselAnna-container {
   position: relative;
   display: flex;
   overflow: hidden;
@@ -370,14 +370,14 @@ body {
 }
 
 /* Estilo do segundo carrossel */
-.carrosselLuiza {
+.carrosselAnna {
   display: flex;
   width: auto;
   transition: transform 2s ease-in-out;
 }
 
 /* Controles do segundo carrossel */
-.controlesLuiza {
+.controlesAnna {
   display: flex;
   justify-content: center;
   gap: 10px;
@@ -385,7 +385,7 @@ body {
 }
 
 /* Botões do segundo carrossel */
-.btnLuiza {
+.btnAnna {
   background: #555555;
   border: none;
   padding: 10px 20px;
@@ -395,12 +395,12 @@ body {
 }
 
 /* Efeito hover nos botões */
-.btnLuiza:hover {
+.btnAnna:hover {
   background: #777;
 }
 
 /* Estado ativo do carrossel (quando arrastando) */
-.carrosselLuiza.active {
+.carrosselAnna.active {
   cursor: grabbing;
   cursor: -webkit-grabbing;
   user-select: none;
@@ -708,7 +708,7 @@ h1 {
     font-size: 1em;
   }
 
-  .carrosselLuiza img {
+  .carrosselAnna img {
     width: 45vw;
     min-width: 120px;
   }
@@ -761,7 +761,7 @@ h1 {
     width: 90%;
   }
 
-  .carrosselLuiza img {
+  .carrosselAnna img {
     width: 35vw;
     min-width: 140px;
   }
@@ -793,7 +793,7 @@ h1 {
 
 /* Desktop (769px and above) */
 @media (min-width: 769px) {
-  .carrosselLuiza img {
+  .carrosselAnna img {
     width: 25vw;
   }
 
